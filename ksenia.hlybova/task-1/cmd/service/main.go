@@ -7,9 +7,24 @@ import (
 
 func main() {
 	var aStr, bStr, op string
-	fmt.Scanln(&aStr)
-	fmt.Scanln(&bStr)
-	fmt.Scanln(&op)
+
+	_, err := fmt.Scanln(&aStr)
+	if err != nil {
+		fmt.Println("Invalid first operand")
+		return
+	}
+
+	_, err = fmt.Scanln(&bStr)
+	if err != nil {
+		fmt.Println("Invalid second operand")
+		return
+	}
+
+	_, err = fmt.Scanln(&op)
+	if err != nil {
+		fmt.Println("Invalid operation")
+		return
+	}
 
 	a, err := strconv.Atoi(aStr)
 	if err != nil {
@@ -24,7 +39,6 @@ func main() {
 	}
 
 	var result int
-
 	switch op {
 	case "+":
 		result = a + b

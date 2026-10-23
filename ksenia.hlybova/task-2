@@ -8,7 +8,7 @@ func main() {
 	var n, k int
 	fmt.Scan(&n, &k)
 
-	validTemps := make([]bool, 31) 
+	validTemps := make([]bool, 31)
 	for i := 15; i <= 30; i++ {
 		validTemps[i] = true
 	}
